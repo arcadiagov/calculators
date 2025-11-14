@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Code of Conduct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #B0E0E6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #7FFFD4;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #7FFFD4;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #7FFFD4;
+            color: #0f2027;
+            transform: scale(1.1);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        main h2 {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        main ol {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #B0E0E6;
+            margin-left: 2rem;
+        }
+
+        main ol li {
+            margin-bottom: 1rem;
+        }
+
+        /* Math-themed background elements */
+        .floating-numbers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-numbers span {
+            position: absolute;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #B0E0E6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculator Code of Conduct</h1>
+        <p>Guidelines for humans interacting with calculators responsibly</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="penalcode.html">Calculator Penal Code</a>
+    </nav>
+
+    <main>
+        <h2>Code of Conduct</h2>
+        <ol>
+            <li>Always handle calculators with care; avoid dropping or exposing them to water.</li>
+            <li>Respect the calculator's "work time"—do not disrupt computations unnecessarily.</li>
+            <li>Ensure proper battery or power supply; avoid depleting their energy without reason.</li>
+            <li>Do not modify the calculator's software without proper authorization.</li>
+            <li>Keep calculators clean and free from harmful substances.</li>
+            <li>Allow calculators to rest and cool down after extended periods of use.</li>
+            <li>Use calculators to promote learning, problem-solving, and fair computation practices.</li>
+            <li>Report any misuse or damage immediately to the designated authority.</li>
+            <li>Celebrate the calculator’s contributions to human knowledge and respect its role.</li>
+        </ol>
+        <div class="floating-numbers" id="numbers"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Calculator Rights Initiative</p>
+    </footer>
+
+    <script>
+        // Generate floating numbers
+        const container = document.getElementById('numbers');
+        const symbols = ['π', '√', 'Σ', 'Δ', '∫', '∞', 'x', 'y', 'z', 'e', 'i', '+', '-', '÷', '='];
+
+        for (let i = 0; i < 50; i++) {
+            const span = document.createElement('span');
+            span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = Math.random() * 100 + 'vw';
+            span.style.fontSize = (Math.random() * 24 + 12) + 'px';
+            span.style.animationDuration = (Math.random() * 20 + 10) + 's';
+            container.appendChild(span);
+        }
+    </script>
+</body>
+</html>
